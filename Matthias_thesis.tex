@@ -1,0 +1,136 @@
+\documentclass[12pt,oneside]{book}
+\include{macros/style}
+%\include{macros/use_packages}
+
+% math packages ------
+\usepackage{amsmath,amsfonts,amssymb,cancel,bm}
+\usepackage[fixamsmath]{mathtools}
+\usepackage[vcentermath]{youngtab}				% Source http://www.ctex.org/documents/packages/math/youngtab.pdf
+
+% Graphics packages -------
+\usepackage{graphicx,epstopdf,subfig}
+
+% Useful packages ------
+\usepackage{comment, hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{diagbox}
+
+\newcommand{\nc}{\newcommand}
+
+% Environment commands --------------
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqs{\begin{equation*}}
+\def\eeqs{\end{equation*}}
+\def\bsubeq{\begin{subequations}}
+\def\esubeq{\end{subequations}}
+\def\bpm{\begin{pmatrix}}
+\def\epm{\end{pmatrix}}
+\def\bit{\begin{itemize}}
+\def\eit{\end{itemize}}
+\def\ben{\begin{enumerate}}
+\def\een{\end{enumerate}}
+\def\btab{\begin{tabular}}
+\def\etab{\end{tabular}}
+% Greek letters ---------------
+\nc{\al}{\alpha}
+\nc{\ga}{\gamma}
+\nc{\de}{\delta}
+\nc{\ep}{\epsilon}
+\nc{\ze}{\zeta}
+\nc{\et}{\eta}
+\nc{\ka}{\kappa}
+\nc{\la}{\lambda}
+\nc{\rh}{\rho}
+\nc{\si}{\sigma}
+\nc{\ta}{\tau}
+\nc{\up}{\upsilon}
+\nc{\ph}{\phi}
+\nc{\ch}{\chi}
+\nc{\ps}{\psi}
+\nc{\om}{\omega}
+\nc{\Ga}{\Gamma}
+\nc{\De}{\Delta}
+\nc{\La}{\Lambda}
+\nc{\Si}{\Sigma}
+\nc{\Up}{\Upsilon}
+\nc{\Ph}{\Phi}
+\nc{\Ps}{\Psi}
+\nc{\Om}{\Omega}
+
+% Math/physics commands ----------
+\nc{\sket}[1]{|#1\rangle}
+\nc{\sbra}[1]{\langle#1|}
+\nc{\ket}[1]{\left|#1\right\rangle}
+\nc{\bra}[1]{\left\langle#1\right|}
+\nc{\vev}[1]{\left\langle#1\right\rangle}
+\nc{\svev}[1]{\langle#1\rangle}
+\nc{\TO}[1]{\vev{\mathcal{T}#1}}
+\nc{\scalarp}[2]{\left\langle#1|#2\right\rangle}
+\nc{\sscalarp}[2]{\langle#1|#2\rangle}
+\nc{\commut}[2]{\left[#1,#2\right]}
+\nc{\anticommut}[2]{\left\{#1,#2\right\}}
+\nc{\scommut}[2]{[#1,#2]}
+\nc{\santicommut}[2]{\{#1,#2\}}
+\nc{\Leq}{\leqslant}
+\nc{\Geq}{\geqslant}
+\nc{\unit}{1\!\!1}
+\nc{\bk}{\mathbf k}
+\nc{\MM}{\mathcal{M}}
+\nc{\Int}{\int\frac{d^4l}{(2\pi)^4}}
+\nc{\ev}{\text{eV}}
+\nc{\gev}{\text{GeV}}
+\nc{\tev}{\text{TeV}}
+\nc{\ptl}{\partial}
+\nc{\ov}{\overline}
+\nc{\Neq}[1]{n^{eq}_{#1}}
+\nc{\Yeq}[1]{Y^{eq}_{#1}}
+\nc{\gammaeq}[1]{\gamma^{eq}_{#1}}
+\nc{\CPV}{\mathcal P}
+\nc{\bdim}[1]{\underline{\bm{#1}}}
+
+% commenting commands ------
+\nc{\MLD}[1]{\color{red} [MLD:#1] \color{black}}
+
+
+\begin{document}
+
+% Front Matter
+\input frontmatter/fm
+
+\newpage
+
+
+	\include{chapters/prologue/prologue}
+
+\part{Particle Physics}
+
+	\include{chapters/PP/intro/PPintro}
+	\include{chapters/PP/background/PPbackground}
+	\include{chapters/PP/HHS_Lepto/HHS_Lepto}
+	\include{chapters/PP/neutrinos/low_mass_neutrinos}
+	\include{chapters/PP/conclusion/PPconclusion}
+%	\appendix
+%	\include{chapters/PP/appendix/PPapp}
+	
+\part{Condensed Matter}
+
+	\include{chapters/CM/intro/CMintro}
+	\include{chapters/CM/background/CMbackground}
+	\include{chapters/CM/CMimpurity_statesSC/CMimpurity_statesSC}
+	\include{chapters/CM/spectro/CMspectroscopy}
+%	\include{chapters/CM/sum_rules/CMsum_rules}
+	\include{chapters/CM/conclusion/CMconclusion}
+	
+%	\include{chapters/prologue/epilogue}
+	
+%	\appendix
+%	\include{chapters/CM/appendix/CMapp}
+
+	\TOCadd{Bibliography}
+	\bibliographystyle{phaip} %"plain" style organizes reference in alphabetical order. phaip
+	\bibliography{Thesis_bib}
+
+	%\bibliographystyle{phaip}% Phys Rev Bibtex Style: apsrev ; American Institute of Physics Journal : phaip
+	
+\end{document}
